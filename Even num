@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class EvenNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Enter the number of elements: ");
+        int n = scanner.nextInt();
+        
+        int[] numbers = new int[n];
+        
+        // Input numbers
+        System.out.println("Enter " + n + " numbers:");
+        for (int i = 0; i < n; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+        
+        int evenCount = 0;
+        
+        // Print even numbers and count their occurrences
+        System.out.println("Even numbers:");
+        for (int i = 0; i < n; i++) {
+            if (numbers[i] % 2 == 0) {
+                System.out.println(numbers[i]);
+                evenCount++;
+            }
+        }
+        
+        System.out.println("Count of even numbers: " + evenCount);
+        
+        scanner.close();
+    }
+}
