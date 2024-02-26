@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class OddNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Enter the number of elements: ");
+        int n = scanner.nextInt();
+        
+        int[] numbers = new int[n];
+        
+        // Input numbers
+        System.out.println("Enter " + n + " numbers:");
+        for (int i = 0; i < n; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+        
+        int oddCount = 0;
+        
+        // Print odd numbers and count their occurrences
+        System.out.println("Odd numbers:");
+        for (int i = 0; i < n; i++) {
+            if (numbers[i] % 2 != 0) {
+                System.out.println(numbers[i]);
+                oddCount++;
+            }
+        }
+        
+        System.out.println("Count of odd numbers: " + oddCount);
+        
+        scanner.close();
+    }
+}
