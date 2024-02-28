@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Prompt the user to enter a number
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        
+        // Remove the last digit and then find the new last digit
+        int secondLastDigit = (number / 10) % 10;
+        
+        // Print the second last digit
+        System.out.println("The second last digit of " + number + " is: " + secondLastDigit);
+        
+        scanner.close();
+    }
+}
