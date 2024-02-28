@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Main {
+    // Method to check if a number is an Armstrong number
+    public static boolean isArmstrong(int num) {
+        int originalNum = num;
+        int sum = 0;
+
+        // Calculate the sum of the cubes of its digits
+        while (num > 0) {
+            int digit = num % 10;
+            sum += Math.pow(digit, 3);
+            num /= 10;
+        }
+
+        // Check if the sum equals the original number
+        return sum == originalNum;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter the range
+        System.out.print("Enter the lower bound of the range: ");
+        int lowerBound = scanner.nextInt();
+
+        System.out.print("Enter the upper bound of the range: ");
+        int upperBound = scanner.nextInt();
+
+        System.out.println("Armstrong numbers between " + lowerBound + " and " + upperBound + ":");
+
+        // Print Armstrong numbers within the specified range
+        for (int i = lowerBound; i <= upperBound; i++) {
+            if (isArmstrong(i)) {
+                System.out.print(i + " ");
+            }
+        }
+
+        scanner.close();
+    }
+}
