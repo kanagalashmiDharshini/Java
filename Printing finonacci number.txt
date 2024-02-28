@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Fibonacci {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Prompt the user to enter the limit
+        System.out.print("Enter the number of Fibonacci numbers to print: ");
+        int limit = scanner.nextInt();
+        
+        // Print Fibonacci numbers
+        System.out.println("Fibonacci sequence up to " + limit + ":");
+        int prev = 0;
+        int curr = 1;
+        for (int i = 1; i <= limit; i++) {
+            System.out.print(prev + " ");
+            int next = prev + curr;
+            prev = curr;
+            curr = next;
+        }
+        
+        scanner.close();
+    }
+}
