@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Main {
+    // Method to check if a number is a palindrome
+    public static boolean isPalindrome(int num) {
+        int reversedNum = 0;
+        int originalNum = num;
+
+        // Reverse the number
+        while (num != 0) {
+            int remainder = num % 10;
+            reversedNum = reversedNum * 10 + remainder;
+            num /= 10;
+        }
+
+        // Check if the original number is equal to the reversed number
+        return originalNum == reversedNum;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter the range
+        System.out.print("Enter the lower bound of the range: ");
+        int lowerBound = scanner.nextInt();
+
+        System.out.print("Enter the upper bound of the range: ");
+        int upperBound = scanner.nextInt();
+
+        System.out.println("Palindrome numbers between " + lowerBound + " and " + upperBound + ":");
+
+        // Print palindrome numbers within the specified range
+        for (int i = lowerBound; i <= upperBound; i++) {
+            if (isPalindrome(i)) {
+                System.out.print(i + " ");
+            }
+        }
+
+        scanner.close();
+    }
+}
